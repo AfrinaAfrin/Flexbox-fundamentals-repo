@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Dark/Light Mode</title>
+    <style>
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --primary-color: #0a74da;
+            --secondary-color: #f0f0f0;
+        }
+
+        
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #ffffff;
+            --primary-color: #009688;
+            --secondary-color: #333333;
+        }
+
+    
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.5s ease;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content h1 {
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        .toggle-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        Welcome to CoinSwitch Ventures
+    </header>
+
+    
+    <div class="content">
+        <h1>Explore Investment Opportunities</h1>
+
+    
+        <button class="toggle-btn" id="toggle-btn">Switch to Dark Mode</button>
+
+        
+        <div class="card-container">
+            <div class="card">
+                <h2>Investment Opportunity 1</h2>
+                <p>Learn about the first investment opportunity at CoinSwitch Ventures.</p>
+            </div>
+            <div class="card">
+                <h2>Investment Opportunity 2</h2>
+                <p>Explore the details about the second opportunity here.</p>
+            </div>
+            <div class="card">
+                <h2>Investment Opportunity 3</h2>
+                <p>Discover more about the third venture and how to get involved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        const toggleBtn = document.getElementById('toggle-btn');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                toggleBtn.textContent = 'Switch to Light Mode';
+            } else {
+                toggleBtn.textContent = 'Switch to Dark Mode';
+            }
+        });
+    </script>
+
+</body>
+</html>
