@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Container */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(to right, darkblue, black);
+            color: white;
+        }
+
+        /* Logo Section */
+        .navbar .logo {
+            width: 100px; /* Adjust the width to fit your logo */
+            height: auto;
+        }
+
+        /* Center Links */
+        .navbar .nav-links {
+            display: flex;
+            justify-content: space-around;
+            width: 50%; /* Adjust width to align center elements */
+            list-style: none;
+        }
+
+        .navbar .nav-links li {
+            margin: 0 15px;
+        }
+
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Sign-Up Button */
+        .navbar .signup-btn {
+            padding: 8px 16px;
+            color: white;
+            background-color: blue;
+            border: 2px solid blue;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar .signup-btn:hover {
+            background-color: white;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Logo (Placeholder for an Image) -->
+        <div class="logo">
+            <!-- You can replace the div with an <img> tag for an actual logo -->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRep4RMi73nVvBkHBCj0bzsMAz-NWALuvS_Pw&s" alt="Logo" width="100" />
+        </div>
+
+        <!-- Centered Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="#">Data Science & AI</a></li>
+            <li><a href="#">B.Tech in CS & AI</a></li>
+            <li><a href="#">Newton Edge</a></li>
+            <li><a href="#">Refer & Earn</a></li>
+            <li><a href="#">More</a></li>
+        </ul>
+
+        <!-- Sign-Up Button -->
+        <a href="#" class="signup-btn">Sign Up</a>
+    </div>
+
+</body>
+</html>
